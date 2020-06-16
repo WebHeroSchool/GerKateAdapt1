@@ -1,116 +1,164 @@
-@media screen and (min-width: 1200px) {
-  body { font-size: 3em;}
+body {
+	margin: 0;
+	overflow-x: hidden;
 }
 
-@media screen and (min-width: 992px) and (max-width: 1199px) {
-  body { font-size: 2.5em;}
-} 
-@media screen and (min-width: 768px) and (max-width: 991px) {
-  body { font-size: 2em;}
+header {
+	display: table;
+	width: 100%;
+	margin-bottom: 35px;
+	background-color: #DCDCDC;
 }
 
-@media screen and (max-width: 767px) {
-  body { font-size: 1.5em;}
+.conteiner {
+	width: 100%;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
 }
 
-@media screen and (max-width: 480px) {
-  body { font-size: 1em;}
+@media (min-width: 1200px) {
+	.container{
+		max-width: 1140px;
+	}
 }
 
-@media screen and (max-width: 320px) {
-  body { font-size: .5em;}
+#logo {
+	float: left;
+	padding: 15px 0ж
 }
 
-#menu__toggle {
-  opacity: 0;
+.image {
+	display: block;
+	width: 50px;
+	height: 100px;
 }
 
-.menu__btn {
-  display: flex;
-  align-items: center;
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  width: 26px;
-  height: 26px;
-  cursor: pointer;
-  z-index: 1;
+nav {
+	width: auto;
+	float: right;
+	margin-top: 7px;
 }
 
-.menu__btn > span,
-.menu__btn > span::before,
-.menu__btn > span::after {
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  background-color: #616161;
+nav ul {
+	display: table;
+	float: right;
+	margin: 0;
+	padding: 0;
 }
 
-.menu__btn > span::before {
-  content: '';
-  top: -8px;
+nav ul li {
+	float: left;
+	list-style-type: none;
 }
 
-.menu__btn > span::after {
-  content: '';
-  top: 8px;
+nav ul li:last-child {
+	padding-right: 0;
 }
 
-.menu__box {
-  display: block;
-  position: fixed;
-  visibility: hidden;
-  top: 0;
-  left: -100%;
-  width: 300px;
-  height: 100%;
-  margin: 0;
-  padding: 80px 0;
-  list-style: none;
-  text-align: center;
-  background-color: #ECEFF1;
-  box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+nav ul li a {
+	color: #FF0000;
+	font-size: 19px;
+	padding: 7px 19px;
+	display: inline-block;
+	text-decoration: none;
+	font-family: sans-serif;
 }
 
-.menu__item {
-  display: block;
-  padding: 12px 24px;
-  color: #333;
-  font-family: 'Roboto', sans-serif;
-  font-size: .5em;
-  font-weight: 600;
-  text-decoration: none;
+nav ul li a:hover {
+	background-color: #DC143C;
+	color: #000;
+	text-decoration: underline;
 }
 
-.menu__item:hover {
-  background-color: #CFD8DC;
+.toggle-menu ul {
+	display: table;
+	width: 31px;
+	margin-left: 0;
+	padding-left: 0;
+	margin: 5px;
 }
 
-#menu__toggle:checked ~ .menu__btn > span {
-  transform: rotate(45deg);
-}
-#menu__toggle:checked ~ .menu__btn > span::before {
-  top: 0;
-  transform: rotate(0);
-}
-#menu__toggle:checked ~ .menu__btn > span::after {
-  top: 0;
-  transform: rotate(90deg);
-}
-#menu__toggle:checked ~ .menu__box {
-  visibility: visible;
-  left: 0;
+.toggle-menu ul li {
+	width: 100%;
+	height: 3px;
+	background-color: #FF0000;
+	margin-bottom: 4px;
+	list-style: none;
 }
 
-.menu__btn > span,
-.menu__btn > span::before,
-.menu__btn > span::after {
-  transition-duration: .25s;
+.toggle-menu ul li:last-child {
+	margin-bottom: 0;
 }
-.menu__box {
-  transition-duration: .25s;
+
+input[type=checkbox],
+label {
+	display: none;
 }
-.menu__item {
-  transition-duration: .25s;
+
+@media only screen and (max-width: 967px) {
+	header {
+		padding: 20px 0;
+	}
+	#logo {
+		padding: 0;
+	}
+	input[type=checkbox] {
+		position: absolute;
+		top: -7777px;
+		left: -7777px;
+		background: none;
+	}
+	input[type=checkbox]:focus {
+		background: none;
+	}
+	label {
+		float: right;
+		display: inline-block;
+		cursor: pointer;
+		margin-right: 25px;
+	}
+	input[type=checkbox]:checked ~ nav {
+		display: block;
+	}
+	nav {
+		display: none;
+		position: absolute;
+		right: 0;
+		top: 64px;
+		background-color: #FF0000;
+		padding: 0;
+		z-index: 99;
+	}
+	nav ul {
+		width: auto;
+	}
+	nav ul li {
+		float: none;
+		padding: 0;
+		width: 100%;
+		display: table;
+	}
+	nav ul li a {
+		color: #FFF;
+		font-size: 15px;
+		padding: 10px 20px;
+		display: block;
+		border-bottom: 1px solid rgba(225,225,225,0.1);
+	}
 }
+
+@media only screen and (max-width: 360px) {
+	label {
+		padding: 5px 0;
+	}
+	#logo {
+		font-size: 1.1rem
+	}
+	nav {
+		top: 47px;
+	}
+}
+
+
