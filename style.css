@@ -1,164 +1,134 @@
 body {
-	margin: 0;
-	overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  max-width: 1440px;
+  min-width: 320px;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 27px;
 }
 
-header {
-	display: table;
-	width: 100%;
-	margin-bottom: 35px;
-	background-color: #DCDCDC;
+.container {
+  width: 1170px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
-.conteiner {
-	width: 100%;
-	padding-right: 15px;
-	padding-left: 15px;
-	margin-right: auto;
-	margin-left: auto;
+.site-navigation {
+  list-style: none;
+  padding: 0;
+  margin: 0
 }
 
-@media (min-width: 1200px) {
-	.container{
-		max-width: 1140px;
-	}
+.main-header-nav-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
-#logo {
-	float: left;
-	padding: 15px 0ж
+.main-header-logo {
+  margin-right: 50%;
+  padding-top: 20px;
+  padding-bottom: 25px;
+  padding-left: 20px;
 }
 
-.image {
-	display: block;
-	width: 50px;
-	height: 100px;
+.site-navigation {
+  display: flex;
+  width: 490px;
+  flex-wrap: wrap;
 }
 
-nav {
-	width: auto;
-	float: right;
-	margin-top: 7px;
+.site-navigation-item {
+  padding: 5px 10px 10px 10px;
+  margin-right: 20px;
+  margin-top: 20px;
 }
 
-nav ul {
-	display: table;
-	float: right;
-	margin: 0;
-	padding: 0;
-}
-
-nav ul li {
-	float: left;
-	list-style-type: none;
-}
-
-nav ul li:last-child {
-	padding-right: 0;
-}
-
-nav ul li a {
-	color: #FF0000;
-	font-size: 19px;
-	padding: 7px 19px;
-	display: inline-block;
-	text-decoration: none;
-	font-family: sans-serif;
-}
-
-nav ul li a:hover {
-	background-color: #DC143C;
-	color: #000;
+.site-navigation-item:hover {
 	text-decoration: underline;
+	color: #FF0000;
+	background-color: #A9A9A9;
 }
 
-.toggle-menu ul {
-	display: table;
-	width: 31px;
-	margin-left: 0;
-	padding-left: 0;
-	margin: 5px;
+.link-item {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #FF0000;
+  text-decoration: none;
 }
 
-.toggle-menu ul li {
-	width: 100%;
-	height: 3px;
+.burger {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 30px;
+	width:30px;
+}
+
+.menu-icon {
+	position: relative;
+	width: 30px;
+	height: 5px;
 	background-color: #FF0000;
-	margin-bottom: 4px;
-	list-style: none;
 }
 
-.toggle-menu ul li:last-child {
-	margin-bottom: 0;
+.menu-icon::before {
+	content: '';
+	display: block;
+	width: 30px;
+	height: 5px;
+	position: absolute;
+	left: 0;
+	top: -10px;
+	background-color: #FF0000;
+	transition: transform .2s ease-in, top .2s linear .2s;
 }
 
-input[type=checkbox],
-label {
-	display: none;
+.menu-icon::after {
+	content: '';
+	display: block;
+	width: 30px;
+	height: 5px;
+	position: absolute;
+	left: 0;
+	top: 10px;
+	background-color: #FF0000;
+	transition: transform .2s ease-in, top .2s linear .2s;
 }
 
-@media only screen and (max-width: 967px) {
-	header {
-		padding: 20px 0;
-	}
-	#logo {
-		padding: 0;
-	}
-	input[type=checkbox] {
-		position: absolute;
-		top: -7777px;
-		left: -7777px;
-		background: none;
-	}
-	input[type=checkbox]:focus {
-		background: none;
-	}
-	label {
-		float: right;
-		display: inline-block;
-		cursor: pointer;
-		margin-right: 25px;
-	}
-	input[type=checkbox]:checked ~ nav {
-		display: block;
-	}
-	nav {
+.menu-icon.menu-icon-active {
+	background-color: transparent;
+}
+
+.menu-icon.menu-icon-active::before {
+	top: 0;
+	transform: rotate(45deg);
+	transition: top .2s linear, transform .2s ease-in .2s;
+}
+
+.menu-icon.menu-icon-active::after {
+	top: 0;
+	transform: rotate(-45deg);
+	transition: top .2s linear, transform .2s ease-in .2s;
+}
+
+
+
+
+
+@media screen and (max-width: 1440px) {
+	.burger {
 		display: none;
-		position: absolute;
-		right: 0;
-		top: 64px;
-		background-color: #FF0000;
-		padding: 0;
-		z-index: 99;
-	}
-	nav ul {
-		width: auto;
-	}
-	nav ul li {
-		float: none;
-		padding: 0;
-		width: 100%;
-		display: table;
-	}
-	nav ul li a {
-		color: #FFF;
-		font-size: 15px;
-		padding: 10px 20px;
-		display: block;
-		border-bottom: 1px solid rgba(225,225,225,0.1);
 	}
 }
 
-@media only screen and (max-width: 360px) {
-	label {
-		padding: 5px 0;
-	}
-	#logo {
-		font-size: 1.1rem
-	}
-	nav {
-		top: 47px;
+@media screen and (max-width: 480px) {
+	.burger {
+		display: flex;
 	}
 }
-
-

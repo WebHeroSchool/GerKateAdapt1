@@ -1,26 +1,30 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
+	<title>Адаптивная верстка с бургер меню</title>
 	<meta charset="utf-8">
-	<title>Адаптивная верстка</title>
-	<link rel="stylesheet" type="text/css" href="style.css" media="screen">
 	<meta name="viewport" content="initial-scale=1.0, width=device-width">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" href="script.js"></script>
 </head>
 <body>
-	<header>
-		<div class="conteiner">
-			<a href="#" id="logo"><img class="image" src="ЛОГОТИП 2D_2.png"></a>
-			<label for="toggle-1" class="toggle-menu"><ul><li></li><li></li><li></li></ul></label>
-			<input type="checkbox" id="toggle-1">
-			<nav>
-				<ul>
-					<li><a href="#">Главная</a></li>
-					<li><a href="#">Хот-доги</a></li>
-					<li><a href="#">Салаты</a></li>
-					<li><a href="#">Напитки</a></li>
-					<li><a href="#">Контакты</a></li>
-				</ul>
-			</nav>
-		</div>
-		<div class="site-wrap"></div>
-	</body>
+	<header class="main-header">
+		<nav class="main-navigation">
+			<div class="conteiner">
+				<div class="main-header-nav-wrapper">
+					<a href="#" class="main-header-logo"><img src="ЛОГОТИП 2D_2.png" width="50px" height="100px" alt="логотип"></a>
+					<div class="burger">
+						<div class="menu-icon menu-icon-active"></div>
+					</div>
+					<ul class="site-navigation">
+						<li class="site-navigation-item"><a href="#" class="link-item">Главная</a></li>
+						<li class="site-navigation-item"><a href="#" class="link-item">Хот-доги</a></li>
+						<li class="site-navigation-item"><a href="#" class="link-item">Салаты</a></li>
+						<li class="site-navigation-item"><a href="#" class="link-item">Напитки</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+</body>
+</html>
