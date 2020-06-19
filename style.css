@@ -1,147 +1,141 @@
+html,
 body {
-  margin: 0;
-  padding: 0;
-  max-width: 1440px;
-  min-width: 320px;
-  font-family: "Roboto", sans-serif;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 27px;
+	height: 100%;
+	font-family: sans-serif;
 }
 
-.container {
-  width: 1170px;
-  margin: 0 auto;
-  padding-left: 15px;
-  padding-right: 15px;
+.wrapper
+
+.containet {
+	max-width: 1180px;
+	margin: 0 auto;
+	padding: 0 10px;
 }
 
-.site-navigation {
-  list-style: none;
-  padding: 0;
-  margin: 0
+.header {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 50;
 }
 
-.main-header-nav-wrapper {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+.header:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #808080;
+	z-index: 2;
 }
 
-.main-header-logo {
-  margin-right: 50%;
-  padding-top: 20px;
-  padding-bottom: 25px;
-  padding-left: 20px;
-}
-
-.site-navigation {
-  display: none;
-  width: 550px;
-  flex-wrap: wrap;
-}
-
-.site-navigation-item {
-  padding: 5px 10px 10px 10px;
-  margin-right: 20px;
-  margin-top: 20px;
-}
-
-.site-navigation-item:hover {
-	text-decoration: underline;
-	color: #FF0000;
-	background-color: #A9A9A9;
-}
-
-.link-item {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 16px;
-  color: #FF0000;
-  text-decoration: none;
-}
-
-.burger {
-	display: none;
-	justify-content: center;
-	align-items: center;
-	height: 30px;
-	width:30px;
-}
-
-.menu-icon {
+.header__body {
 	position: relative;
-	width: 30px;
-	height: 5px;
-	background-color: #FF0000;
+	display: flex;
+	justify-content: space-between;
+	height: 80px;
+	align-items: center;
 }
 
-.menu-icon::before {
-	content: '';
+.header__logo {
+	flex: 0 0 40px;
+	position: relative;
+	z-index: 3;
+}
+
+.header__logo img {
+	max-width: 100%;
 	display: block;
-	width: 30px;
-	height: 5px;
-	position: absolute;
-	left: 0;
-	top: -10px;
-	background-color: #FF0000;
-	transition: transform .2s ease-in, top .2s linear .2s;
+}
+.header__burger {
+	display: none;
 }
 
-.menu-icon::after {
-	content: '';
-	display: block;
-	width: 30px;
-	height: 5px;
-	position: absolute;
-	left: 0;
-	top: 10px;
-	background-color: #FF0000;
-	transition: transform .2s ease-in, top .2s linear .2s;
+.header__list {
+	display: flex;
+	color: #FF0000;
+	font-size: 18px;
+	position: relative;
+	z-index: 3;
 }
 
-.menu-icon.menu-icon-active {
-	background-color: transparent;
+.header__list li {
+	list-style: none;
+	margin: 0 0 0 20px;
+}
+.header__link {
+	color: #fff;
+	font-size: 18px;
+	text-transform: uppercase;
+	text-decoration: none;
 }
 
-.menu-icon.menu-icon-active::before {
-	top: 0;
-	transform: rotate(45deg);
-	transition: top .2s linear, transform .2s ease-in .2s;
-}
-
-.menu-icon.menu-icon-active::after {
-	top: 0;
-	transform: rotate(-45deg);
-	transition: top .2s linear, transform .2s ease-in .2s;
-}
-
-
-
-
-
-@media screen and (max-width: 1440px) {
-	.site-navigation {
-		display: flex;
+@media (max-width: 1440px){
+	.header__link {
 		font-size: 24px;
 	}
-	.burger {
-		display: none;
+}
+
+@media (max-width: 768px){
+	.header__link {
+		font-size: 20px
 	}
 }
 
-@media screen and (max-width: 768px) {
-	.site-navigation {
-		font-size: 20px;
-	}
-}
+@media (max-width: 480px){
 
-@media screen and (max-width: 480px) {
-	.burger {
+	.header__burger {
 		display: block;
+		position: relative;
+		width: 30px;
+		height: 20px;
+		z-index: 3;
 	}
-	.site-navigation {
+
+	.header__burger:before,
+	.header__burger:after {
+		content: '';
+		position: absolute;
+		background-color: #fff;
+		width: 100%;
+		height: 2px;
+		left: 0;
+	}
+
+	.header__burger:before {
+		top: 0;
+	}
+
+	.header__burger:after {
+		bottom: 0;
+	}
+
+	.header__burger span {
+		position: absolute;
+		background-color: #fff;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		top: 9px;
+	}
+
+	.header__menu {
+		position: fixed;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: #CD5C5C;
+		padding: 70px 10px 20px 10px;
+	}
+
+	.header__list {
 		display: none;
+	}
+
+	.header__link {
+		font-size: 16px;
 	}
 }
